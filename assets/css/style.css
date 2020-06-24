@@ -1,13 +1,83 @@
+/*******************************FONTS******************************/
+@font-face{
+    font-family:'AmeliaBold';
+    src:url('./../fonts/Amelia-Basic-Bold.ttf');
+}
+@font-face{
+    font-family:'AmeliaOblicuaBlack';
+    src:url('./../fonts/Amelia-Basic-OblicuaBlack.ttf');
+}
+@font-face{
+    font-family:'AmeliaBasicBlack';
+    src:url('./../fonts/Amelia-Basic-Black.ttf');
+}
+@font-face{
+    font-family:'AmeliaOblicuaBold';
+    src:url('./../fonts/Amelia-Basic-OblicuaBold.ttf');
+}
+@font-face{
+    font-family:'AmeliaBasicItalic';
+    src:url('./../fonts/Amelia-Basic-Italic.ttf');
+}
+@font-face{
+    font-family:'AmeliaBasic';
+    src:url('./../fonts/Amelia-Basic.ttf');
+}
 /*******************************GENERAL******************************/
 body{
     background:white;
 }
 a{
     text-decoration:none;
+    color:var(--bleu);
 }
 :root{
     --bleu : #214490;
     --jaune : #ffd800;
+}
+h2{
+    font-size:1.5em;
+    font-family:'AmeliaOblicuaBlack';
+    text-transform: uppercase;
+}
+.menu > nav > ul > li:last-child, .btn-yellow{
+    background:var(--jaune);
+    border-radius:10px;
+    padding:.5em;
+}
+.btn-yellow, .btn-white{
+    padding:.8em 1em;
+    font-family:'AmeliaBasicBlack';
+}
+.btn-white{
+    background-color:white;
+    border-radius:10px;
+}
+.italic{
+    font-family:'AmeliaBasicItalic';
+}
+.centres, .lieux, .carre{
+    padding: 2em 0;
+}
+header a, .lieux h2, .adresse p, .chaine, .actualites, .confiance{
+    color:var(--bleu);
+}
+p{
+    line-height:1.4em;
+}
+.atouts h2, .chaine h2, .actualites h2{
+    position:relative;
+}
+.atouts h2::after, .chaine h2::after, .actualites h2::after{
+    content: url('./../img/underline.png');
+    display:block;
+    position:absolute;
+    bottom:-1em;
+    left:-5%;
+    transform:scale(1.2);
+}
+.conseil > section, header > section, .centres > section, .confiance{
+    padding: 0 10vw;
 }
 /*******************************INDEX******************************/
 /***********HEADER**********/
@@ -17,17 +87,20 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:10;
+    background:white;
+    font-family:'AmeliaBold';
 }
 header > section{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding:0 10vw;
     width:100%;
     height:100%;
-}
-header a{
-    color: var(--bleu);
 }
 .logo{
     width:20%;
@@ -38,16 +111,348 @@ header a{
 .menu{
     width:75%;
 }
-.menu ul{
+.menu > nav > ul{
     display:flex;
     align-items: center;
     justify-content: space-around;
 }
-.menu li:last-child{
-    background:var(--jaune);
-    border-radius:10px;
-    padding:.5em;
+.menu li{
+    font-size:.9em;
 }
-.menu nav > ul{
-    
+/***********HEADER**********/
+.diapo{
+    height:85vh;
+    margin: 0 5vw;
+}
+.diapo .swiper-container{
+    height:100%;
+}
+.diapo img{
+    max-width:90%;
+    max-height:100%;
+    height:auto;
+}
+.diapo .swiper-slide{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.diapo .swiper-button-next:after{
+    content : url('./../img/arrow-right.png');
+}
+.diapo .swiper-button-prev:after{
+    content : url('./../img/arrow-left.png');
+}
+.swiper-pagination-bullet{
+    background:white;
+    border:1px solid var(--bleu);
+    opacity:1;
+}
+.swiper-pagination-bullet-active{
+    background-color:var(--bleu);
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets{
+    bottom:0;
+}
+/***********ATOUTS**********/
+.atouts{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top:2em;
+}
+.atouts > section{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items:center;
+    width:90vw;
+    color:white;
+}
+.atouts > section > *{
+    margin:2em 0;
+}
+.atoutsDesc{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+}
+.chiffre{
+    font-family:'AmeliaOblicuaBlack';
+}
+.chiffreDesc{
+    font-family:'AmeliaOblicuaBold';
+}
+.atoutsDesc > section{
+    width:15%;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+}
+.chiffreDesc{
+    width:70%;
+    text-align:center;
+}
+.atoutsDesc > section:last-child .chiffreDesc{
+    width:90%;
+}
+.chiffre{
+    color:var(--jaune);
+    font-size:2.5em;
+    margin-bottom:.25em;
+}
+img.chiffre{
+    height:60px;
+}
+.chiffreDesc span{
+    display:block;
+}
+/***********CENTRES**********/
+.centres > section{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+}
+.lieux, .chaine{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+}
+.lieux > section{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width:100%;
+}
+.lieux h2{
+    width:20%;
+}
+.lieux h2, .chaine h2{
+    position:relative;
+    margin-bottom:2em;
+    text-align:center;
+}
+.lieux h2::after{
+    content: url('./../img/deux.png');
+    display:block;
+    position:absolute;
+    top:-1.2em;
+    left:-.8em;
+}
+.adresse img{
+    margin-bottom:1em;
+}
+.adresse p{
+    font-family:'AmeliaBasic';
+}
+.adresse p:first-of-type{
+    font-family:'AmeliaBasicBlack';
+}
+.chaine{
+    width:70%;
+}
+.chaine > section{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom:2em;
+    text-align:center;
+}
+.chaine h2::after{
+    left:1.5em;
+    transform:scale(1.5);
+}
+.logistique{
+    width:20%;
+    font-family:'AmeliaOblicuaBlack';
+}
+.chaine >section > img{
+    height:5%;
+    margin-top:45px;
+}
+.image{
+    height:80px;
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+    margin-bottom:1em;
+}
+.chaine h3{
+    margin-bottom:3.5em;
+    height:40px;
+    font-size:1.2em;
+}
+.logistique{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.chaine .logistique:first-child .descLogistique, .chaine .logistique:last-child .descLogistique{
+    width:140%;
+}
+.descLogistique{
+    height:120px;
+    display:flex;
+    align-items:flex-start;
+    justify-content: center;
+}
+.logistique p{
+    position:relative;
+}
+.logistique p::after{
+    content: '';
+    display:block;
+    position:absolute;
+    background-color:var(--jaune);
+    height:3px;
+    width:40px;
+    top:-1.5em;
+    left:50%;
+    transform:translateX(-50%);
+}
+/***********CONSEIL**********/
+.conseil{
+    display:flex;
+    justify-content:center;
+    padding-bottom:5em;
+}
+.conseil > section{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.carre > section{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width:70%;
+    min-height:350px;
+    text-align:center;
+}
+.carre{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height:400px;
+    max-width:50%;
+}
+.carre p{
+    margin:1em 0;
+}
+.carre h2{
+    color:white;
+    position:relative;
+    width:66%;
+}
+.carre h2::after{
+    content: '';
+    display:block;
+    position:absolute;
+    background-color:white;
+    height:3px;
+    width:90px;
+    bottom:-1.5em;
+    left:50%;
+    transform:translateX(-50%);
+}
+.carreJaune h2{
+    color:var(--bleu);
+}
+.carreJaune h2::after{
+    background-color:var(--bleu);
+}
+.carreBleu{
+    margin-right:-1.3em;
+}
+.carreJaune{
+    margin-left:-1.3em;
+    margin-top:12em;
+}
+/***********ACTUALITES**********/
+.actualites{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding:2em 10vw;
+}
+.actualites h2{
+    margin-bottom:2em;
+}
+.actualites h2::after{
+    left:.5em;
+    transform: scale(1.4);
+}
+.actualites > p{
+    font-family:'AmeliaBold';
+}
+.actus{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:2em 0 3em 0;
+}
+.actus > section{
+    width:24%;
+}
+.imgActus{
+    width:180px;
+    height:180px;
+}
+.dateActu{
+    font-family:'AmeliaBasic';
+    font-size:.8em;
+}
+.titreActu{
+    font-family:'AmeliaBasicBlack';
+}
+.descActu{
+    font-family:'AmeliaBasic';
+    margin-top:.5em;
+    font-size:.9em;
+}
+
+.confiance{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+}
+.diapoConfiance{
+    width:100%;
+    margin:2em 0;
+}
+.diapoConfiance .swiper-slide{
+    text-align:center;
+}
+
+
+@font-face{
+    font-family:'AmeliaBold';
+    src:url('./../fonts/Amelia-Basic-Bold.ttf');
+}
+@font-face{
+    font-family:'AmeliaOblicuaBlack';
+    src:url('./../fonts/Amelia-Basic-OblicuaBlack.ttf');
+}
+@font-face{
+    font-family:'AmeliaBasicBlack';
+    src:url('./../fonts/Amelia-Basic-Black.ttf');
+}
+@font-face{
+    font-family:'AmeliaOblicuaBold';
+    src:url('./../fonts/Amelia-Basic-OblicuaBold.ttf');
+}
+@font-face{
+    font-family:'AmeliaBasicItalic';
+    src:url('./../fonts/Amelia-Basic-Italic.ttf');
+}
+@font-face{
+    font-family:'AmeliaBasic';
+    src:url('./../fonts/Amelia-Basic.ttf');
 }
