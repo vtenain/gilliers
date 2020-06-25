@@ -1,6 +1,6 @@
 var diapoAccueil = new Swiper('.diapoAccueil', {
     loop:true,
-    cssMode: true,
+    speed:700,
     pagination: {
       el: '.swiper-pagination',
       clickable:true,
@@ -11,8 +11,9 @@ var diapoAccueil = new Swiper('.diapoAccueil', {
       },
   });
   var diapoConfiance = new Swiper('.diapoConfiance', {
-    slidesPerView: 5,
-    spaceBetween: 30,
+    slidesPerView: 3,
+    spaceBetween: 40,
+    speed:500,
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
