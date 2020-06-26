@@ -38,6 +38,7 @@ a{
     --jaune : #ffd800;
     --gris : #838383;
     --gris2 : #454545;
+    --gris3 : #cac9c9;
 }
 h2{
     font-size:1.5em;
@@ -66,11 +67,12 @@ h2{
 p{
     line-height:1.4em;
 }
-.atouts h2, .chaine h2, .actualites h2, .presentation h2, .historique > h2, .transport h2, .presentationActus h2{
+.atouts h2, .chaine h2, .actualites h2, .presentation h2, .historique > h2, .transport h2, .presentationActus h2,
+.actu h2, .pourquoi h2, .emplois h2, .bandeauRejoindre h2{
     position:relative;
 }
 .atouts h2::after, .chaine h2::after, .actualites h2::after, .presentation h2::after, .historique > h2::after,
-.transport h2::after, .presentationActus h2::after{
+.transport h2::after, .presentationActus h2::after, .actu h2::after, .pourquoi h2::after, .emplois h2::after{
     content: url('./../img/underline.png');
     display:block;
     position:absolute;
@@ -86,8 +88,13 @@ p{
     width: 80%;
     text-align:center;
 }
-.presentation h2, .historique > h2, .transport h2, .presentationActus h2, .lieux h2, .chaine h2, .actualites h2{
+.presentation h2, .historique > h2, .transport h2, .presentationActus h2, .lieux h2, .chaine h2, .actualites h2,
+.pourquoi h2, .emplois h2, .bandeauRejoindre h2{
     margin-bottom:2em;
+}
+header, .actualites > p, .titleHistoire, .texte > p:first-child, .titreTransport :first-child, 
+.texteActu > :first-child, .pourquoi > p:first-of-type, .job article{
+    font-family:'AmeliaBold';
 }
 /*******************************INDEX******************************/
 /***********HEADER**********/
@@ -103,7 +110,6 @@ header{
     width:100%;
     z-index:10;
     background:white;
-    font-family:'AmeliaBold';
 }
 header > section{
     display:flex;
@@ -390,9 +396,6 @@ img.chiffre{
     left:.5em;
     transform: scale(1.4);
 }
-.actualites > p{
-    font-family:'AmeliaBold';
-}
 .actus{
     display:flex;
     justify-content: space-between;
@@ -592,9 +595,6 @@ section.histoireMargin {
     margin-top: 5em;
     margin-left:-.5em;
 }
-.titleHistoire{
-    font-family:'AmeliaBold';
-}
 .descHistoire{
     color:var(--gris2);
 }
@@ -632,9 +632,6 @@ section.histoireMargin {
 .texte > p:last-child{
     color:var(--gris2);
     margin-top:2em;
-}
-.texte > p:first-child{
-    font-family:'AmeliaBold';
 }
 .imgOffres > section{
     width:50%
@@ -702,9 +699,6 @@ section.histoireMargin {
     color:var(--jaune);
     text-align: center;
 }
-.titreTransport :first-child{
-    font-family: 'AmeliaBold';
-}
 .offresTransport > section:first-child .titreTransport, .offresTransport > section:nth-child(2) .titreTransport{
     width:30%;
 }
@@ -732,7 +726,6 @@ section.histoireMargin {
 /*******************************ACTUALITES******************************/
 /***********ACTUS**********/
 .presentationActus{
-    height: 150vh;
     padding: 2em 10vw;
     display: flex;
     flex-direction: column;
@@ -744,11 +737,10 @@ section.histoireMargin {
 }
 .cardsActus{
     display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
     margin: 2em 0;
-    flex-flow: column wrap;
-    height: 100%;
-    width: 100%;
-    align-items: center;
+    align-items: flex-start;
 }
 .cardsActus > section{
     width:200px;
@@ -783,6 +775,137 @@ section.histoireMargin {
     align-items: center;
     justify-content: center;
     padding-top:.5em;
+}
+/*******************************FICHE ACTUALITE******************************/
+/***********ACTU**********/
+.actu{
+    padding:2em 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.actu h2::after{
+    left:1.6em;
+    transform: scale(1.6);
+}
+.actu h2{
+    margin-bottom:1.5em;
+}
+.contentActu{
+    margin:2em 0;
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.contentActu > section{
+    width:48%;
+}
+.texteActu > :first-child{
+    font-size:1.2em;
+    margin-bottom: 1em;
+}
+.texteActu > *:not(:first-child){
+    color:var(--gris2);
+}
+.actu > .contentActu:last-child .texteActu{
+    text-align:right;
+}
+/*******************************RECRUTEMENT******************************/
+/***********POURQUOI**********/
+.pourquoi, .emplois{
+    padding:2em 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.pourquoi > *{
+    margin:.5em 0;
+}
+.pourquoi h2::after{
+    left: 3.5em;
+    transform: scale(1.4);
+}
+.pourquoi > p:first-of-type{
+    width:60%;
+}
+.pourquoi > :last-child{
+    color:var(--gris2);
+    width:90%;
+}
+/***********EMPLOIS**********/
+.emplois h2::after{
+    left: 2em;
+    transform: scale(1.5);
+}
+.job{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1em 0;
+    min-height:20vh;
+}
+.offresEmploi .job:not(:last-child){
+    border-bottom:1px solid var(--gris3);
+}
+.job img{
+    width:200px;
+    clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
+}
+.cdi, .job > p{
+    color:var(--gris2);
+}
+.job > p, .job article{
+    text-align:left;
+}
+.job article{
+    margin-left:1em;
+    width:50%;
+    font-size:.9em;
+}
+.job > section{
+    background-color:var(--gris);
+    height:110px;
+    width:3px;
+    transform: rotate(8deg);
+    margin:0 1.5em 0 1em;
+}
+.job > a{
+    width:20%;
+    margin-left:1em;
+}
+.job > p{
+    width:90%;
+}
+/***********BANDEAU**********/
+.bandeauRejoindre{
+    padding:4em 0 3em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bandeauRejoindre > section{
+    width:50%;
+    padding:2em 4em;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-around;
+}
+.bandeauRejoindre p{
+    color:var(--gris2);
+    margin-bottom:1em;
+}
+.bandeauRejoindre h2::after{
+    content: '';
+    display:block;
+    position:absolute;
+    background-color:var(--bleu);
+    height:3px;
+    width:60px;
+    bottom:-1em;
+    left:50%;
+    transform:translateX(-50%);
 }
 
 @font-face{
