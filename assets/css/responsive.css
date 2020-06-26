@@ -1,0 +1,11 @@
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 40%;
+    max-width: 50%;
+  }
+}@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
