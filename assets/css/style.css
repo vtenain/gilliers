@@ -45,7 +45,7 @@ h2{
     font-family:'AmeliaOblicuaBlack';
     text-transform: uppercase;
 }
-.menu > nav > ul > li:last-child, .btn-yellow{
+.menuSite > ul > li:nth-last-child(1), .btn-yellow{
     background:var(--jaune);
     border-radius:10px;
     padding:.5em;
@@ -125,10 +125,10 @@ header > section{
 .logo img{
     width:100%;
 }
-.menu{
+.menuSite{
     width:75%;
 }
-.menu > nav > ul{
+.menuSite > ul{
     display:flex;
     align-items: center;
     justify-content: space-around;
@@ -363,6 +363,7 @@ img.chiffre{
 .carre h2{
     position:relative;
     width:66%;
+    margin-bottom:2em;
 }
 .carre h2::after{
     content: '';
@@ -712,7 +713,7 @@ section.histoireMargin {
     padding:2em 0;
     margin-top:-2em;
 }
-.besoin > section{
+.besoinDevis, .besoin > section{
     display:flex;
     justify-content: center;
     align-items: center;

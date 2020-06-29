@@ -11,7 +11,7 @@ var diapoAccueil = new Swiper('.diapoAccueil', {
       },
   });
   var diapoConfiance = new Swiper('.diapoConfiance', {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 40,
     speed:500,
     pagination: {
@@ -22,6 +22,13 @@ var diapoAccueil = new Swiper('.diapoAccueil', {
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+          768: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+          }
+
       },
   });
 

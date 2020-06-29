@@ -2,6 +2,7 @@
     position: relative;
     z-index: 1000;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -16,6 +17,7 @@
     margin: 0;
     overflow: visible; 
     padding: 0;
+    font-family:'AmeliaBasic';
 }
 .hamburger > p {
     margin-right: -10px;
