@@ -45,7 +45,11 @@ h2{
     font-family:'AmeliaOblicuaBlack';
     text-transform: uppercase;
 }
-.menuSite > ul > li:nth-last-child(1), .btn-yellow{
+.firstSection{
+    margin-top:-2em;
+    padding-top:2em;
+}
+.menuSite > ul > li:nth-last-child(2), .btn-yellow{
     background:var(--jaune);
     border-radius:10px;
     padding:.5em;
@@ -97,6 +101,9 @@ header, .actualites > p, .titleHistoire, .texte > p:first-child, .titreTransport
 .texteActu > :first-child, .pourquoi > p:first-of-type, .job article, .texteEmploi > :first-child{
     font-family:'AmeliaBold';
 }
+.noDesktop{
+    display:none !important;
+}
 /*******************************INDEX******************************/
 /***********HEADER**********/
 header{
@@ -138,15 +145,16 @@ header > section{
 }
 /***********HEADER**********/
 .diapo{
-    height:85vh;
+    height:75vh;
     margin: 0 5vw;
+    margin-top:10vh;
 }
 .diapo .swiper-container{
     height:100%;
 }
 .diapo img{
     max-width:90%;
-    max-height:100%;
+    max-height:90%;
     height:auto;
 }
 .diapo .swiper-slide{
@@ -622,7 +630,6 @@ section.histoireMargin {
     align-items: flex-start;
     padding-bottom:2em;
     padding-top:2em;
-    height:40vh;
 }
 .description > section{
     height:100%;
@@ -804,6 +811,9 @@ section.histoireMargin {
     display:flex;
     justify-content: space-between;
     align-items: flex-start;
+}
+.imageEmploi img, .imageActu img{
+    width:100%;
 }
 .contentActu > section, .contentEmploi > section{
     width:48%;

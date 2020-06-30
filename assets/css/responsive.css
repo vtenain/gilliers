@@ -10,6 +10,9 @@
   .noMobile{
     display:none !important;
   }
+  .noDesktop{
+    display:initial !important;
+  }
   .presentation > p, .historique > p, .transport > p, .presentationActus > p{
     width:100%;
   }
@@ -84,8 +87,8 @@
     margin:1em 0;
     width:90%;
   }
-  .menu-active li:last-child{
-    background:none !important;
+  .menuSite > ul > li:nth-last-child(1){
+    background:none;
   }
   .menuSite > ul > li:nth-last-child(2){
     background:none;
@@ -304,7 +307,6 @@
   }
   .description{
     flex-direction: column;
-    height:auto;
   }
   .description > section{
     height:auto;
@@ -387,7 +389,7 @@
   .contentActu, .contentEmploi{
     flex-direction: column;
   }
-  .contentActu > section, .contentEmploi > section, .imageEmploi img, .imageActu img{
+  .contentActu > section, .contentEmploi > section{
     width:100%;
   }
   .actu .contentActu:first-child .imageActu, .imageEmploi{
@@ -461,12 +463,356 @@
   }
 }
 
+/***iPads***/
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+  /*******************************GENERAL******************************/
+  .conseil > section, header > section, .centres > section, .confiance, .ariane{
+    padding: 0 5vw;
+  }
+  .actualites, .offresDesc, .presentation, .historique, .transport, .pourquoi, .emplois, .actu, .offreEmploi{
+    padding: 2em 5vw;
+  }
+  /*******************************INDEX******************************/
+  .menu li{
+    width:20%;
+    text-align: center;
+  }
+  .diapo{
+    height:50vh;
+  }
+  .diapo img{
+    max-height:55%;
+  }
+  .atoutsDesc > section{
+    width:30%;
+    margin-bottom:1em;
+  }
+  .atoutsDesc{
+    flex-wrap:wrap;
+    margin-bottom:0 !important;
+  }
+  .lieux h2::after{
+    left:-2em;
+  }
+  .lieux > section > img{
+    width:35%;
+  }
+  .chaine .logistique:first-child .descLogistique, .chaine .logistique:last-child .descLogistique{
+    width:220%;
+  }
+  .carreBleu{
+    margin-right:-1em;
+  }
+  .carreJaune{
+    margin-left:-1em;
+  }
+  .actus{
+    flex-wrap:wrap;
+    justify-content:space-around;
+  }
+  .actus > section{
+    width:35%;
+  }
+  .truck{
+    display:none;
+  }
+  .footerPrincipal > section{
+    padding:2em 5vw;
+    width:90vw;
+  }
+  /*******************************QUI SOMMES NOUS******************************/
+  .bandeau{
+    height:15vh;
+    margin-top:0;
+  }
+  .bandeau > section{
+    width:90%;
+  }
+  .firstBandeau{
+    font-size:2em;
+  }
+  .lastBandeau{
+    font-size:1.1em;
+  }
+  .competences{
+    flex-wrap:wrap;
+    justify-content:space-around;
+  }
+  .competences > section{
+    width:35%;
+    margin:1em 0;
+  }
+  /*******************************NOS OFFRES******************************/
+  .imgOffres > :first-child{
+    margin-right:-.5em;
+  }
+  .imgOffres > :last-child{
+    margin-left:-.5em;
+  }
+  .imgTransport::before, .imgTransport::after{
+    transform: scale(.6);
+  }
+  .imgTransport::before{
+    left:-8em;
+  }
+  .imgTransport::after{
+    right:-8em;
+  }
+  .offresTransport > section:first-child .titreTransport, .offresTransport > section:nth-child(2) .titreTransport{
+    width:45%;
+  }
+  /*******************************FICHE ACTU******************************/
+  .carre{
+    background-size:100% 100% !important;
+  }
+}
+
+@media only screen and (min-width : 1001px) and (max-width : 1024px) {
+  .menu li{
+    font-size:1em;
+  }
+  .carreBleu{
+    margin-right:-1.2em;
+  }
+  .carreJaune{
+    margin-left:-1.2em;
+  }
+}
+
+/**PHONES LANDSCAPE**/
+@media screen and (max-width:750px) and (orientation:landscape){
+  /*******************************INDEX******************************/
+  .logo img{
+    width:50%;
+  }
+  .diapo{
+    margin-top:25vh;
+  }
+  .lieux h2{
+    width:30%;
+  }
+  .lieux > section > img{
+    width:40%;
+  }
+  .chaine > section > img{
+    width:5%;
+  }
+  .confiance > img{
+    width:40%;
+  }
+  .bandeau{
+    height:30vh;
+  }
+  .firstBandeau{
+    font-size:1.5em;
+  }
+  .lastBandeau{
+    font-size:.8em;
+  }
+  .bandeau > section{
+    width:90%;
+  }
+  /*******************************OFFRES******************************/
+  .imgOffres > section{
+    width:30%;
+  }
+  .imgOffres{
+    justify-content: center;
+    margin-bottom:1em;
+  }
+  /*******************************ACTUALITES******************************/
+  .column > article{
+    margin:1em;
+    width:200px;
+  }
+  .column{
+    flex:50% !important;
+  }
+}
+
+@media screen and (min-width:751px) and (max-width: 1023px) and (orientation:landscape) {
+  /*******************************INDEX******************************/
+  header{
+    height:20vh;
+  }
+  .diapo{
+    margin-top:20vh;
+    height:55vh;
+  }
+  .diapo img{
+    max-height:80%;
+  }
+  .confiance > img{
+    width:30%;
+  }
+  /*******************************QUI SOMMES NOUS******************************/
+  .ariane{
+    margin-top:22vh;
+  }
+  .bandeau{
+    height:30vh;
+  }
+  .bandeau > section{
+    width:80%;
+  }
+  .competences > section{
+    margin:1em 0;
+  }
+}
+
+/***iPads landscape***/
+@media screen and (min-width : 1024px) and (max-width : 1200px) and (orientation:landscape){
+  .diapo{
+    margin-top:20vh;
+  }
+  .diapo img{
+    max-height:85%;
+  }
+  .lieux h2::after{
+    left:-1.5em;
+  }
+}
+
+
+@media only screen and (min-height:1020px) and (max-height:1030px) and (min-width : 1201px) and (max-width : 1400px) and (orientation:landscape){
+  /*******************************INDEX******************************/
+  .diapo{
+    margin-top:10vh;
+    height:60vh;
+  }
+  .diapo img{
+    max-height:80%;
+  }
+  .carreJaune{
+    margin-left:-1.45em;
+  }
+  .carreBleu{
+    margin-right:-1.45em;
+  }
+  .bandeau{
+    height:20vh;
+  }
+  .imgOffres > :last-child{
+    margin-left:-.7em;
+  }
+  .imgOffres > :first-child{
+    margin-right:-.7em;
+  }
+}
+
+@media screen and (min-width:1800px){
+  h2{
+    font-size:2em;
+  }
+  p, .btn-yellow, .btn-white{
+    font-size:1.5em;
+  }
+  h3, .chaine h3{
+    font-size:1.5em;
+  }
+  .menu li{
+    font-size:1.4em;
+  }
+  .diapo{
+    margin-top:10vh;
+    height:60vh;
+  }
+  .diapo img{
+    max-height:90%;
+  }
+  .chiffre{
+    font-size:3em;
+  }
+  img.chiffre{
+    height:80px;
+  }
+  .lieux h2::after{
+    left:-2em;
+  }
+  .carreJaune{
+    margin-left:-2em;
+  }
+  .carreBleu{
+    margin-right: -2em;
+  }
+  .firstBandeau{
+    font-size:3em;
+  }
+  .lastBandeau{
+    font-size:2em;
+  }
+  .imgOffres > :first-child{
+    margin-right:-.9em;
+  }
+  .imgOffres > :last-child{
+    margin-left:-.9em;
+  }
+  .offresTransport > section > p{
+    margin-top:1em;
+  }
+  .besoin img{
+    height:1.4em;
+    margin-right:-.3em;
+    margin-top:-.1em;
+  }
+  .descActu{
+    font-size:1.4em;
+  }
+  .dateActu{
+    font-size:1.3em;
+  }
+  .cardsActus > section{
+    width:300px;
+  }
+  .cardsActus img{
+    height:190px;
+  }
+  .texteActu > :first-child, .texteEmploi > :first-child{
+    font-size:1.7em;
+  }
+}
+
+@media screen and (min-width:1200px) and (min-height:900px) and (max-width:1280px) and (max-height:951px){
+  .bandeau > section{
+    width:90%;
+  }
+}
+
+@media screen and (max-width:1280px) and (max-height:800px){
+  .diapo{
+    height:60vh;
+  }
+  .bandeau > section{
+    width:80%;
+  }
+}
+
+@media screen and (min-width:1400px) and (max-height:900px){
+  .diapo{
+    height:60vh;
+  }
+  .bandeau > section{
+    width:80%;
+  }
+  .carreJaune{
+    margin-left:-1.5em;
+  }
+  .carreBleu{
+    margin-right:-1.5em;
+  }
+  .lieux h2::after {
+    top: -2.2em;
+    left: -2.2em;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .column {
     flex: 40%;
     max-width: 50%;
   }
-}@media screen and (max-width: 600px) {
+}
+@media screen and (max-width: 600px) {
   .column {
     flex: 100%;
     max-width: 100%;
@@ -477,8 +823,5 @@
   /*****************NAVBAR*****************/
   .hamburger.hamburger--spin {
       display: none;
-  }
-  .noDestkop{
-    display:none !important;
   }
 }

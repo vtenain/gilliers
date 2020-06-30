@@ -25,9 +25,15 @@ var diapoAccueil = new Swiper('.diapoAccueil', {
       },
       breakpoints: {
           768: {
-              slidesPerView: 3,
+              slidesPerView: 2,
               spaceBetween: 10,
-          }
+          },
+          1024: {
+              slidesPerView: 3,
+          },
+          1800: {
+              slidesPerView: 4,
+          },
 
       },
   });
