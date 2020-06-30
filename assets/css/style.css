@@ -725,12 +725,9 @@ section.histoireMargin {
     justify-content: center;
     align-items: center;
 }
-.besoin h2{
-    margin-right:1em;
-}
 .besoin img{
-    height:1em;
-    margin-right:-.15em;
+    height:1.25em;
+    margin-right:1.5em;
 }
 /*******************************ACTUALITES******************************/
 /***********ACTUS**********/
