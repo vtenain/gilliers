@@ -774,12 +774,16 @@ section.histoireMargin {
     margin:1em 0;
     color:var(--gris2);
     text-align: left;
+    word-break: break-all;
 }
 .column > article{
     margin-bottom:2em;
 }
 .column > article > section{
     background:white;
+}
+.column.medium, .column.small {
+    display: none;
 }
 .btn-actu{
     font-family:'AmeliaBasicBlack';

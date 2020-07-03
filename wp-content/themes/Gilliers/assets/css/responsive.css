@@ -16,6 +16,20 @@
   .presentation > p, .historique > p, .transport > p, .presentationActus > p{
     width:100%;
   }
+  .column.medium, .large {
+    display: none !important;
+  }
+  .column.small {
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+  }
+  .column.small > article{
+    width: 100%;
+  }
+  .cardsActus {
+    justify-content: center !important;
+  }
   /*******************************INDEX******************************/
   /***********HEADER**********/
   header { 
@@ -475,6 +489,13 @@
   }
   .actualites, .offresDesc, .presentation, .historique, .transport, .pourquoi, .emplois, .actu, .offreEmploi{
     padding: 2em 5vw;
+  }
+  .column.small, .large {
+    display: none !important;
+  }
+  .column.medium {
+    display: flex !important;
+    flex-direction: column;
   }
   /*******************************INDEX******************************/
   .menu li{
